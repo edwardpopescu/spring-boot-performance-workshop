@@ -1,0 +1,14 @@
+{
+  "request": {
+    "url": "/hello/wiremock",
+    "method": "GET"
+  },
+  "response": {
+    "status": 200,
+    "fixedDelayMilliseconds": 50,
+    "body": "{\"name\":\"Spring user\"}",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
