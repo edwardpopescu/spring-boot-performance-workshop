@@ -6,8 +6,8 @@ services:
     ports:
       - '8080:8080'
     volumes:
-      - './src/main/java/wiremock/mappings:/home/wiremock/mappings'
-    command: '--no-request-journal --disable-request-logging --container-threads=250 --jetty-acceptor-threads=100 --jetty-accept-queue-size=500  --async-response-enabled=true --async-response-threads=200'
+      - './wiremock/src/main/java/wiremock/mappings:/home/wiremock/mappings'
+    command: '--global-response-templating --no-request-journal --disable-request-logging --container-threads=250 --jetty-acceptor-threads=100 --jetty-accept-queue-size=500  --async-response-enabled=true --async-response-threads=200'
 
   mongo:
     image: mongo

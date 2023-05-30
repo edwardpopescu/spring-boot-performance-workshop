@@ -6,7 +6,7 @@
   "response": {
     "status": 200,
     "fixedDelayMilliseconds": 50,
-    "body": "{\"name\":\"Spring user\"}",
+    "body": "{\"name\":\"{{randomValue length=10 type='ALPHABETIC'}}\"\n}",
     "headers": {
       "Content-Type": "application/json"
     }
