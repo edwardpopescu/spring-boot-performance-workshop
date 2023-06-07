@@ -13,12 +13,14 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("hello")
-public class HelloMvcController {
+public class HelloController {
+
+    private static final String DEFAULT_GREETING = "Hello";
 
     private final UserRetrievalService userRetrievalService;
 
     @GetMapping(value = "spring",  produces = APPLICATION_JSON_VALUE)
-    public HelloResponse greeting() {return new HelloResponse("Hello", userRetrievalService.saveUser());
+    public HelloResponse greeting() {return new HelloResponse(DEFAULT_GREETING, userRetrievalService.saveUser());
     }
 
 }

@@ -11,8 +11,8 @@ import static io.gatling.javaapi.http.HttpDsl.status;
 
 public class GatlingSimulation extends Simulation {
 
-    private static final int USERS_PER_SEC = 15;
-    private static final int DURATION_SECONDS = 60;
+    private static final int USERS_PER_SEC = 20;
+    private static final int DURATION_SECONDS = 120;
 
     HttpProtocolBuilder httpSetup = HttpDsl.http
             .baseUrl("http://localhost:8082")
