@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import reactor.core.publisher.Mono;
 
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
@@ -15,12 +16,11 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @RequestMapping("hello")
 public class HelloController {
 
-    private static final String DEFAULT_GREETING = "Hello";
 
     private final UserRetrievalService userRetrievalService;
 
     @GetMapping(value = "spring",  produces = APPLICATION_JSON_VALUE)
-    public HelloResponse greeting() {return new HelloResponse(DEFAULT_GREETING, userRetrievalService.saveUser());
+    public Mono<HelloResponse> greeting() {return userRetrievalService.saveUser();
     }
 
 }

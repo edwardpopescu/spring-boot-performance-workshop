@@ -11,7 +11,7 @@ import static io.gatling.javaapi.http.HttpDsl.status;
 
 public class GatlingSimulation extends Simulation {
 
-    private static final int USERS_PER_SEC = 20;
+    private static final int USERS_PER_SEC = 100;
     private static final int DURATION_SECONDS = 120;
 
     HttpProtocolBuilder httpSetup = HttpDsl.http
@@ -20,8 +20,8 @@ public class GatlingSimulation extends Simulation {
             .userAgentHeader("Gatling");
 
     ScenarioBuilder scn = CoreDsl.scenario("Load Test Creating Customers")
-            .exec(HttpDsl.http("mvc")
-                    .get("/hello/spring/")
+            .exec(HttpDsl.http("springboot")
+                    .get("/hello/spring")
                     .check(status().is(200))
             );
 
